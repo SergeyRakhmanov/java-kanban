@@ -4,7 +4,7 @@ public class Task {
     protected String name;
     protected String description;
     protected Integer uid;
-    protected String status;
+    protected TaskStatus status;
 
     public void setUid(Integer uid) {
         this.uid = uid;
@@ -30,18 +30,18 @@ public class Task {
         return uid;
     }
 
-    public String getStatus() {
+    public TaskStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(TaskStatus status) {
         this.status = status;
     }
 
     public Task(String name, String description) {
         this.name = name;
         this.description = description;
-        this.status = "NEW"; //все задачи изначально NEW
+        this.status = TaskStatus.NEW; //все задачи изначально NEW
     }
 
     @Override

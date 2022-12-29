@@ -35,19 +35,19 @@ public class Main {
         System.out.println(manager.getAllSubtasc());
 
         //меняем статус и апдейтим объекты
-        task1.setStatus("DONE");
+        task1.setStatus(TaskStatus.DONE);
         manager.updateTask(task1);
 
-        task2.setStatus("DONE");
+        task2.setStatus(TaskStatus.DONE);
         manager.updateTask(task2);
 
-        subtask1.setStatus("DONE");
+        subtask1.setStatus(TaskStatus.DONE);
         manager.updateSubtask(subtask1);
 
-        subtask2.setStatus("DONE");
+        subtask2.setStatus(TaskStatus.DONE);
         manager.updateSubtask(subtask2);
 
-        subtask3.setStatus("DONE");
+        subtask3.setStatus(TaskStatus.DONE);
         manager.updateSubtask(subtask3);
 
         //печатаем все списки

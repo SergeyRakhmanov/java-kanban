@@ -30,7 +30,7 @@ public class Manager {
         listOfEpic.get(subtask.getEpicID()).addSubtask(subtask.getUid());
 
         //обновляем статус эпика, т.к. добавили новый сабтаск, то статус ставим NEW
-        listOfEpic.get(subtask.getEpicID()).setStatus("NEW");
+        listOfEpic.get(subtask.getEpicID()).setStatus(TaskStatus.NEW);
 
         return subtask.getUid();
     }
@@ -70,7 +70,7 @@ public class Manager {
     protected void updateEpicStatus(int id) { //проверка и обновление статуса эпика, на вход принимаем ид эпика
         //проверяем что под эпиком есть сабтаски
         if (listOfEpic.get(id).getSubtasksIds().isEmpty()) {//если список связанных сабтасков пуст, то статус эпика new
-            listOfEpic.get(id).setStatus("NEW");
+            listOfEpic.get(id).setStatus(TaskStatus.NEW);
             return;
         }
 
@@ -79,26 +79,27 @@ public class Manager {
 
         for (int i = 0; i < listOfEpic.get(id).getSubtasksIds().size(); i++) {
             //берем в массиве эпика ид сабтаски и проверяем её статус, проходимся по всему массиву сабтасков в эпике
-            if (listOfSubtask.get(listOfEpic.get(id).getSubtasksIds().get(i)).getStatus().equals("NEW")) {
+            if (listOfSubtask.get(listOfEpic.get(id).getSubtasksIds().get(i)).getStatus().equals(TaskStatus.NEW)) {
                 hasNEW = true;
-            } else if (listOfSubtask.get(listOfEpic.get(id).getSubtasksIds().get(i)).getStatus().equals("DONE")) {
+            } else if
+            (listOfSubtask.get(listOfEpic.get(id).getSubtasksIds().get(i)).getStatus().equals(TaskStatus.DONE)) {
                 hasDONE = true;
             }
         }
 
         //если есть закрытые и открытые сабтаски то статус in_progress
         if (hasDONE && hasNEW) {
-            listOfEpic.get(id).setStatus("IN_PROGRESS");
+            listOfEpic.get(id).setStatus(TaskStatus.IN_PROGRESS);
         }
 
         //если есть открытые и нет закрытых то статус NEW
         else if (hasNEW && !hasDONE) {
-            listOfEpic.get(id).setStatus("NEW");
+            listOfEpic.get(id).setStatus(TaskStatus.NEW);
         }
 
         //если есть закрытые и нет открытых то статус DONE
         else if (!hasNEW && hasDONE) {
-            listOfEpic.get(id).setStatus("DONE");
+            listOfEpic.get(id).setStatus(TaskStatus.DONE);
         }
     }
 
@@ -157,11 +158,11 @@ public class Manager {
         return listOfSubtask.get(id);
     }
 
-    public Boolean updateTask(Task tasc) { //обновление таски
+    public Boolean updateTask(Task task) { //обновление таски
         //заменяю значения в таске из существующего листа новыми. По условию ид верный, то есть его менять не надо
-        listOfTask.get(tasc.getUid()).setName(tasc.getName());
-        listOfTask.get(tasc.getUid()).setDescription(tasc.getDescription());
-        listOfTask.get(tasc.getUid()).setStatus(tasc.getStatus());
+        listOfTask.get(task.getUid()).setName(task.getName());
+        listOfTask.get(task.getUid()).setDescription(task.getDescription());
+        listOfTask.get(task.getUid()).setStatus(task.getStatus());
         return true;
     }
 
