@@ -1,27 +1,28 @@
 package kanban.service;
-
 import java.util.HashMap;
 import kanban.model.*;
 
-public class Manager {
+public class InMemoryManager implements TaskManager {
     protected HashMap<Integer, Task> listOfTask = new HashMap<>(); //мапа для тасков
     protected HashMap<Integer, Epic> listOfEpic = new HashMap<>(); //мапа для эпиков
     protected HashMap<Integer, Subtask> listOfSubtask = new HashMap<>(); //мапа для сабтасков
-
     protected  int guid = 1; // общий глобальный идентификатор задач всех типов
 
+    @Override
     public int createTask(Task task) { //создание таски
         task.setUid(guid++);
         listOfTask.put(task.getUid(),task);
         return task.getUid();
     }
 
+    @Override
     public int createEpic(Epic epic) { //создание эпика
         epic.setUid(guid++);
         listOfEpic.put(epic.getUid(),epic);
         return epic.getUid();
     }
 
+    @Override
     public int createSubtask(Subtask subtask) { //создание сабтаски
         subtask.setUid(guid++);
         listOfSubtask.put(subtask.getUid(),subtask);
@@ -35,26 +36,32 @@ public class Manager {
         return subtask.getUid();
     }
 
+    @Override
     public HashMap<Integer, Task> getAllTasc() { //получение списка всех тасков
         return listOfTask;
     }
 
+    @Override
     public HashMap<Integer, Epic> getAllEpic() { //получение списка всех эпиков
         return listOfEpic;
     }
 
+    @Override
     public HashMap<Integer, Subtask> getAllSubtasc() { //получение списка всех сабтасков
         return listOfSubtask;
     }
 
+    @Override
     public void deleteTaskById(int id) {//удаление таски по ид
         listOfTask.remove(id);
     }
 
+    @Override
     public void clearAllTasc() { //удаление всех тасков
         listOfTask.clear();
     }
 
+    @Override
     public void deleteSubtaskById(int id) { //удаление сабтаски по ид
         //кроме удаления сабтаски необходимо удалить информацию о ней из массива связанных сабтасков в эпике
         //для этого в массиве сабтаски по ид находим эпикИд и передаем его в метод удаления сабтаски из эпика
@@ -103,6 +110,7 @@ public class Manager {
         }
     }
 
+    @Override
     public void clearAllSubtasc() { //удаление всех сабтасков
         //поскольку надо чистить не только сам список сабтасков, но и удалить информацию о них в эпиках,
         //вызываем в цикле удаление сабтасков по ид. При этом под конец список сабтасков будет чист,
@@ -112,6 +120,7 @@ public class Manager {
         }
     }
 
+    @Override
     public void deleteEpicById(int id) { //удаление эпика по ид
         //удаляем связанные с эпиком сабтаски. Для этого пробегаемся по всему массиву ид сабтасков внутри переданного
         // эпика, полученный ид сабтаски удаляем из массива сабтасков
@@ -123,6 +132,7 @@ public class Manager {
         listOfEpic.remove(id);
     }
 
+    @Override
     public void clearAllEpic() { //удаление всех эпиков
         //при удалении всех эпиков надо также удалить все связанные с ними сабтаски. Поскольку мы считаем
         // что не может существовать сабтасков не связанных с эпиками, то мы просто чистим два массива -
@@ -132,6 +142,7 @@ public class Manager {
     }
 
     //получение списка всех сабтасков определенного эпика
+    @Override
     public HashMap<Integer, Subtask> getAllSubtasksByEpicId(int id) {
         HashMap<Integer, Subtask> list = new HashMap<>();
 
@@ -146,18 +157,25 @@ public class Manager {
         return list;
     }
 
+    @Override
     public Task getTaskById(int id) { //получение таски по ид
+        Managers.getDefaultHistory().addTask(listOfTask.get(id)); //записываем обращение к таске в историю
         return listOfTask.get(id);
     }
 
+    @Override
     public Epic getEpicById(int id) { //получение эпика по ид
+        Managers.getDefaultHistory().addTask(listOfEpic.get(id)); //записываем обращение к эпику в историю
         return listOfEpic.get(id);
     }
 
+    @Override
     public Subtask getSubtaskById(int id) { //получение сабтаски по ид
+        Managers.getDefaultHistory().addTask(listOfSubtask.get(id)); //записываем обращение к сабтаске в историю
         return listOfSubtask.get(id);
     }
 
+    @Override
     public Boolean updateTask(Task task) { //обновление таски
         //заменяю значения в таске из существующего листа новыми. По условию ид верный, то есть его менять не надо
         listOfTask.get(task.getUid()).setName(task.getName());
@@ -166,6 +184,7 @@ public class Manager {
         return true;
     }
 
+    @Override
     public Boolean updateEpic(Epic epic) { //обновление эпика
         //заменяю значения в эпике из существующего листа новыми. По условию ид верный, то есть его менять не надо
         listOfEpic.get(epic.getUid()).setName(epic.getName());
@@ -174,6 +193,7 @@ public class Manager {
         return true;
     }
 
+    @Override
     public Boolean updateSubtask(Subtask sub) { //обновление таски
         //заменяю значения в таске из существующего листа новыми. По условию ид верный, то есть его менять не надо
         listOfSubtask.get(sub.getUid()).setName(sub.getName());

@@ -1,11 +1,14 @@
 import kanban.model.*;
-import kanban.service.Manager;
+import kanban.service.HistoryManager;
+import kanban.service.Managers;
+import kanban.service.TaskManager;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Manager manager = new Manager();
+        TaskManager manager = Managers.getDefault();
+        HistoryManager history = Managers.getDefaultHistory();
 
         //создаем таски, эпики и сабтаски
         Task task1 = new Task("Задача 1", "Описание задачи 1");
@@ -65,5 +68,13 @@ public class Main {
         System.out.println(manager.getAllTasc());
         System.out.println(manager.getAllEpic());
         System.out.println(manager.getAllSubtasc());
+
+        //смотрим историю
+        System.out.println();
+        System.out.println("Проверка истории");
+        manager.getEpicById(4); // смотрим эпик 4
+        manager.getTaskById(2); //смотрим таску 2
+        manager.getSubtaskById(7); //смотрим сабтаску 7
+        System.out.println(history.getHistory());
     }
 }
