@@ -1,25 +1,24 @@
 package kanban.service;
 
 import kanban.model.Task;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 public class InMemoryHistoryManager implements HistoryManager {
-    protected final List<Task> history = new ArrayList<>(10); //список для хранения истории
+    protected final LinkedList<Task> history = new LinkedList<>(); //список для хранения истории
 
     @Override
     public void addTask(Task task) {
-        //если в иcтории уже есть 10 элементов, то удаляем последний
+        //если в иcтории уже есть 10 элементов, то удаляем последний в истории == первый в списке
         if (history.size()==10) {
-            history.remove(9);
+            history.removeFirst();
         }
 
-        //добавляем элемент в массив на первое место, остальные при этом подвинутся на 1 позицию
-        history.add(0, task);
+        //добавляем элемент в массив на последнее место
+        history.addLast(task);
     }
 
     @Override
-    public List<Task> getHistory() {
+    public LinkedList<Task> getHistory() {
         return history;
     }
 }
