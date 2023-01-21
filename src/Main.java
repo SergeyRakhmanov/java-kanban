@@ -32,6 +32,18 @@ public class Main {
         Subtask subtask3 = new Subtask("Сабтаск 3", "Описание сабтаска 3",epic2.getUid());
         manager.createSubtask(subtask3);
 
+        Epic epic3 = new Epic("Эпик 3", "Описание эпика 3");
+        manager.createEpic(epic3);
+
+        Subtask subtask4 = new Subtask("Сабтаск 4", "Описание сабтаска 4",epic3.getUid());
+        manager.createSubtask(subtask4);
+
+        Subtask subtask5 = new Subtask("Сабтаск 5", "Описание сабтаска 5",epic3.getUid());
+        manager.createSubtask(subtask5);
+
+        Subtask subtask6 = new Subtask("Сабтаск 6", "Описание сабтаска 6",epic3.getUid());
+        manager.createSubtask(subtask6);
+
         //печатаем все списки
         System.out.println(manager.getAllTasc());
         System.out.println(manager.getAllEpic());
@@ -72,9 +84,34 @@ public class Main {
         //смотрим историю
         System.out.println();
         System.out.println("Проверка истории");
+
         manager.getEpicById(4); // смотрим эпик 4
+        System.out.println("1. " + history.getHistory());
+
         manager.getTaskById(2); //смотрим таску 2
+        System.out.println("2. " + history.getHistory());
+
         manager.getSubtaskById(7); //смотрим сабтаску 7
-        System.out.println(history.getHistory());
+        System.out.println("3. " + history.getHistory());
+
+        manager.getEpicById(4); // снова смотрим эпик 4
+        System.out.println("4. " + history.getHistory());
+
+        manager.deleteSubtaskById(7); //удаляем сабтаск 7
+        System.out.println("5. " + history.getHistory());
+
+        manager.getEpicById(8); // смотрим эпик 8
+        System.out.println("6. " + history.getHistory());
+
+        manager.getSubtaskById(9); //смотрим сабтаску 9
+        manager.getSubtaskById(10); //смотрим сабтаску 10
+        manager.getSubtaskById(11); //смотрим сабтаску 11
+        System.out.println("7. " + history.getHistory());
+
+        manager.getEpicById(4); // снова смотрим эпик с id=4
+        System.out.println("8. " + history.getHistory());
+
+        manager.deleteEpicById(8); //удаляем эпик с тремя сабтасками
+        System.out.println("9. " + history.getHistory());
     }
 }

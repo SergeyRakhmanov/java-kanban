@@ -54,6 +54,7 @@ public class InMemoryManager implements TaskManager {
     @Override
     public void deleteTaskById(int id) {//удаление таски по ид
         listOfTask.remove(id);
+
     }
 
     @Override
@@ -72,6 +73,7 @@ public class InMemoryManager implements TaskManager {
 
         //теперь удаляем сабтаску
         listOfSubtask.remove(id);
+        Managers.getDefaultHistory().remove(id); //удаляем из истории просмотров
     }
 
     protected void updateEpicStatus(int id) { //проверка и обновление статуса эпика, на вход принимаем ид эпика
@@ -126,10 +128,12 @@ public class InMemoryManager implements TaskManager {
         // эпика, полученный ид сабтаски удаляем из массива сабтасков
         for (int i = 0; i < listOfEpic.get(id).getSubtasksIds().size(); i++) {
             listOfSubtask.remove(listOfEpic.get(id).getSubtasksIds().get(i));
+            Managers.getDefaultHistory().remove(listOfEpic.get(id).getSubtasksIds().get(i));//удаляем сабтаск из истории
         }
 
         //удаляем эпик из списка эпиков
         listOfEpic.remove(id);
+        Managers.getDefaultHistory().remove(id); //удаляем эпик из истории
     }
 
     @Override
