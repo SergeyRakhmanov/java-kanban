@@ -1,5 +1,7 @@
 package kanban.model;
 
+import kanban.service.TaskType;
+
 import java.util.ArrayList;
 
 public class Epic extends Task {
@@ -34,5 +36,10 @@ public class Epic extends Task {
 
         result += '}';
         return result;
+    }
+
+    @Override
+    public String toSave() { //для сохранения вводим отдельный метод, чтобы проверять по удобному toString
+        return (uid + "," + TaskType.EPIC + "," + name + "," + status + "," + description + ",");
     }
 }

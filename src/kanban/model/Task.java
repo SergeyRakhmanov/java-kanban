@@ -1,5 +1,7 @@
 package kanban.model;
 
+import kanban.service.TaskType;
+
 public class Task {
     protected String name;
     protected String description;
@@ -51,5 +53,9 @@ public class Task {
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 '}';
+    }
+
+    public String toSave() { //для сохранения вводим отдельный метод, чтобы проверять по удобному toString
+        return (uid + "," + TaskType.TASK + "," + name + "," + status + "," + description + ",");
     }
 }

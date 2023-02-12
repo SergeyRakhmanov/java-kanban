@@ -1,13 +1,16 @@
 import kanban.model.*;
+import kanban.service.FileBackendTasksManager;
 import kanban.service.HistoryManager;
 import kanban.service.Managers;
 import kanban.service.TaskManager;
+
+import java.io.File;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        TaskManager manager = Managers.getDefault();
+        TaskManager manager = Managers.getDefaultFile();
         HistoryManager history = Managers.getDefaultHistory();
 
         //создаем таски, эпики и сабтаски
@@ -111,7 +114,13 @@ public class Main {
         manager.getEpicById(4); // снова смотрим эпик с id=4
         System.out.println("8. " + history.getHistory());
 
-        manager.deleteEpicById(8); //удаляем эпик с тремя сабтасками
-        System.out.println("9. " + history.getHistory());
+        //sprint 6
+        FileBackendTasksManager newManagerFromFile =
+                FileBackendTasksManager.loadFromFile(new File("tasks.csv"));
+
+        System.out.println("Печатаем менеджер, загруженный из файла");
+        System.out.println(newManagerFromFile.getAllEpic());
+        System.out.println(newManagerFromFile.getAllSubtasc());
+        System.out.println(newManagerFromFile.getAllTasc());
     }
 }

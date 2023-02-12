@@ -5,8 +5,12 @@ import kanban.model.*;
 public class InMemoryManager implements TaskManager {
     protected HashMap<Integer, Task> listOfTask = new HashMap<>(); //мапа для тасков
     protected HashMap<Integer, Epic> listOfEpic = new HashMap<>(); //мапа для эпиков
-    protected HashMap<Integer, Subtask> listOfSubtask = new HashMap<>(); //мапа для сабтасков
+    protected HashMap<Integer, Subtask> listOfSubtask = new HashMap<Integer, Subtask>(); //мапа для сабтасков
     protected  int guid = 1; // общий глобальный идентификатор задач всех типов
+
+    public void setGuid(int newGuid) {
+        guid = newGuid;
+    }
 
     @Override
     public int createTask(Task task) { //создание таски

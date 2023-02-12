@@ -12,4 +12,11 @@ public class Managers {
     public static InMemoryHistoryManager getDefaultHistory(){
         return history;
     }
+
+    //sprint 6
+    static FileBackendTasksManager fileManager = new FileBackendTasksManager();
+
+    public static TaskManager getDefaultFile() {
+        return fileManager;
+    }
 }

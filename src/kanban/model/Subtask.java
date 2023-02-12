@@ -1,5 +1,7 @@
 package kanban.model;
 
+import kanban.service.TaskType;
+
 public class Subtask extends Task {
     protected Integer epicID;
 
@@ -7,8 +9,8 @@ public class Subtask extends Task {
         return epicID;
     }
 
-    public void setEpicID(Integer epicID) {
-        this.epicID = epicID;
+    public void setEpicID(Integer ID) {
+        this.epicID = ID;
     }
 
     //при создании сабтаска принимаем на вход эпик в который он входит
@@ -25,5 +27,10 @@ public class Subtask extends Task {
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 '}';
+    }
+
+    @Override
+    public String toSave() { //для сохранения вводим отдельный метод, чтобы проверять по удобному toString
+        return (uid + "," + TaskType.SUBTASK + "," + name + "," + status + "," + description + "," + epicID + ",");
     }
 }
