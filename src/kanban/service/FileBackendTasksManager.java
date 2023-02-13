@@ -33,7 +33,6 @@ public class FileBackendTasksManager extends InMemoryManager {
                 writer.write(historyToString(Managers.getDefaultHistory()));
             } catch (NullPointerException e) {
                 throw new ManagerSaveException("Нет истории для сохранения");
-            } catch (ManagerSaveException e) {
             }
 
         } catch (IOException e) {

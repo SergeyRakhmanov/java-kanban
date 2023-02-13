@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39918e99-87b8-43d3-93a9-1cfc5ffbbc13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/kanban/service/FileBackendTasksManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/kanban/service/ManagerSaveException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/kanban/service/TaskType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-kanban/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-kanban/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-kanban/kanban/service/Managers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-kanban/kanban/service/Managers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kanban/model/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/model/Epic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kanban/model/Subtask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/model/Subtask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kanban/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/model/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kanban/service/InMemoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/service/InMemoryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kanban/service/Managers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/service/Managers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kanban/service/FileBackendTasksManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/service/FileBackendTasksManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
