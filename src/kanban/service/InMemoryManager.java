@@ -14,22 +14,25 @@ public class InMemoryManager implements TaskManager {
 
     @Override
     public int createTask(Task task) { //создание таски
-        task.setUid(guid++);
+        task.setUid(guid);
         listOfTask.put(task.getUid(),task);
+        guid++;
         return task.getUid();
     }
 
     @Override
     public int createEpic(Epic epic) { //создание эпика
-        epic.setUid(guid++);
+        epic.setUid(guid);
         listOfEpic.put(epic.getUid(),epic);
+        guid++;
         return epic.getUid();
     }
 
     @Override
     public int createSubtask(Subtask subtask) { //создание сабтаски
-        subtask.setUid(guid++);
+        subtask.setUid(guid);
         listOfSubtask.put(subtask.getUid(),subtask);
+        guid++;
 
         //добавляю в эпик информацию по новому сабтаску
         listOfEpic.get(subtask.getEpicID()).addSubtask(subtask.getUid());
@@ -113,7 +116,8 @@ public class InMemoryManager implements TaskManager {
         //если есть закрытые и нет открытых то статус DONE
         else if (!hasNEW && hasDONE) {
             listOfEpic.get(id).setStatus(TaskStatus.DONE);
-        }
+        } else //в остальных случаях статус IN_PROGRESS
+            listOfEpic.get(id).setStatus(TaskStatus.IN_PROGRESS);
     }
 
     @Override
@@ -155,7 +159,9 @@ public class InMemoryManager implements TaskManager {
         HashMap<Integer, Subtask> list = new HashMap<>();
 
         //проверяем что сабтаски в эпике есть, если массив ид сабтасков в эпике пустой то возвращаем пустой лист
-        if (listOfEpic.get(id).getSubtasksIds().isEmpty()) return list;
+        if (!listOfEpic.containsKey(id)) {
+            return null;
+        } else if (listOfEpic.get(id).getSubtasksIds().isEmpty()) return list;
 
         //пробегаемся по всему массиву ИД сабтасков в указанном эпике
         for (int i = 0; i < listOfEpic.get(id).getSubtasksIds().size(); i++) {
@@ -167,18 +173,21 @@ public class InMemoryManager implements TaskManager {
 
     @Override
     public Task getTaskById(int id) { //получение таски по ид
+        if (!listOfTask.containsKey(id)) return null;
         Managers.getDefaultHistory().addTask(listOfTask.get(id)); //записываем обращение к таске в историю
         return listOfTask.get(id);
     }
 
     @Override
     public Epic getEpicById(int id) { //получение эпика по ид
+        if (!listOfEpic.containsKey(id)) return null;
         Managers.getDefaultHistory().addTask(listOfEpic.get(id)); //записываем обращение к эпику в историю
         return listOfEpic.get(id);
     }
 
     @Override
     public Subtask getSubtaskById(int id) { //получение сабтаски по ид
+        if (!listOfSubtask.containsKey(id)) return null;
         Managers.getDefaultHistory().addTask(listOfSubtask.get(id)); //записываем обращение к сабтаске в историю
         return listOfSubtask.get(id);
     }

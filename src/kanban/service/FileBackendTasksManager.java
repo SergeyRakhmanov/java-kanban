@@ -14,16 +14,22 @@ public class FileBackendTasksManager extends InMemoryManager {
 
             //сначала пишем в файл эпики, чтобы потом при восстановлении истории сначала восстановить эпики,
             // а потом сабтаски, так как сабтаски требуют прописать ID эпика при создании
-            for (Epic epic : listOfEpic.values()) {
-                writer.write(epic.toSave() + "\n");
+            if (!listOfEpic.isEmpty()) {
+                for (Epic epic : listOfEpic.values()) {
+                    writer.write(epic.toSave() + "\n");
+                }
             }
 
-            for (Subtask subTask : listOfSubtask.values()) { //пишем в файл сабтаски
-                writer.write(subTask.toSave() + "\n");
+            if (!listOfSubtask.isEmpty()) {
+                for (Subtask subTask : listOfSubtask.values()) { //пишем в файл сабтаски
+                    writer.write(subTask.toSave() + "\n");
+                }
             }
 
-            for (Task task : listOfTask.values()) { //пишем в файл таски
-                writer.write(task.toSave() + "\n");
+            if (!listOfTask.isEmpty()) {
+                for (Task task : listOfTask.values()) { //пишем в файл таски
+                    writer.write(task.toSave() + "\n");
+                }
             }
 
             writer.write("\n"); //делаем пробел-разделитель

@@ -69,8 +69,10 @@ public class InMemoryHistoryManager implements HistoryManager {
             Integer prevID = customLinkedList.get(id).getPrev(); //ID предыдущей записи
             Integer nextID = customLinkedList.get(id).getNext(); //ID следующей записи
 
-
-            if (prevID == null) { //если удаляем первую запись
+            if ((prevID == null) && (nextID == null)) { //если удаляем единственную запись
+                customLinkedList.remove(id);
+                return;
+            } else if (prevID == null) { //если удаляем первую запись
                 customLinkedList.get(nextID).setPrev(null); //ставим следующей ноде null в ссылку на предыдущую ноду
                 head = customLinkedList.get(nextID).getTask(); //обновляем голову истории
             }
@@ -85,5 +87,9 @@ public class InMemoryHistoryManager implements HistoryManager {
             //удаляем запись из истории
             customLinkedList.remove(id);
         }
+    }
+
+    public void clearAllHistory() {
+        customLinkedList.clear();
     }
 }

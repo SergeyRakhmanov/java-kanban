@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="39918e99-87b8-43d3-93a9-1cfc5ffbbc13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kanban/service/FileBackendTasksManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/service/FileBackendTasksManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +14,7 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -30,25 +30,89 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exception" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="kanban.model" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Анна\dev\java-kanban\src" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="JUnit.FileBackendTasksManagerTest.shouldGetNameOfSubtaskBySubtaskId">
+    <configuration name="FileBackendTasksManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FileBackendTasksManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileBackendTasksManagerTest.shouldGetNameOfEpicByEpicId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FileBackendTasksManagerTest" />
+      <option name="METHOD_NAME" value="shouldGetNameOfEpicByEpicId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileBackendTasksManagerTest.shouldGetNameOfSubtaskBySubtaskId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FileBackendTasksManagerTest" />
+      <option name="METHOD_NAME" value="shouldGetNameOfSubtaskBySubtaskId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileBackendTasksManagerTest.shouldGetNullWithWrongEpicId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FileBackendTasksManagerTest" />
+      <option name="METHOD_NAME" value="shouldGetNullWithWrongEpicId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InMemoryManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InMemoryManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.FileBackendTasksManagerTest.shouldGetNameOfSubtaskBySubtaskId" />
+        <item itemvalue="JUnit.FileBackendTasksManagerTest.shouldGetNameOfEpicByEpicId" />
+        <item itemvalue="JUnit.FileBackendTasksManagerTest.shouldGetNameOfSubtaskBySubtaskId" />
+        <item itemvalue="JUnit.FileBackendTasksManagerTest.shouldGetNullWithWrongEpicId" />
+        <item itemvalue="JUnit.FileBackendTasksManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -66,16 +130,28 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="331" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1674288345318">
+    <state x="331" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1677324040482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671559298687" />
-    <state x="331" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1674288345318" />
-    <state x="612" y="175" key="#com.intellij.ide.util.MemberChooser" timestamp="1676204974963">
+    <state x="331" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1677324040482" />
+    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1677355343358">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1677355343358" />
+    <state x="612" y="175" key="#com.intellij.ide.util.MemberChooser" timestamp="1677392769222">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="2685" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671564585886" />
-    <state x="612" y="175" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1676204974963" />
+    <state x="612" y="175" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1677392769222" />
+    <state x="618" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1677324046936">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="618" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1677324046936" />
+    <state x="566" y="272" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1677396829540">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="566" y="272" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1677396829540" />
     <state x="406" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1672332757815">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -84,41 +160,89 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1676199431771" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1675499240376">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1677271855527">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1675499240376" />
-    <state width="1492" height="282" key="GridCell.Tab.0.bottom" timestamp="1676206634414">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1677271855527" />
+    <state width="1493" height="197" key="GridCell.Tab.0.bottom" timestamp="1677424439340">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671565904849" />
-    <state width="1492" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1676206634414" />
-    <state width="1492" height="282" key="GridCell.Tab.0.center" timestamp="1676206634414">
+    <state width="1493" height="197" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1677424439340" />
+    <state width="1493" height="197" key="GridCell.Tab.0.center" timestamp="1677424439340">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671565904849" />
-    <state width="1492" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1676206634414" />
-    <state width="1492" height="282" key="GridCell.Tab.0.left" timestamp="1676206634414">
+    <state width="1493" height="197" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1677424439340" />
+    <state width="1493" height="197" key="GridCell.Tab.0.left" timestamp="1677424439340">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671565904849" />
-    <state width="1492" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1676206634414" />
-    <state width="1492" height="282" key="GridCell.Tab.0.right" timestamp="1676206634414">
+    <state width="1493" height="197" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1677424439340" />
+    <state width="1493" height="197" key="GridCell.Tab.0.right" timestamp="1677424439340">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671565904849" />
-    <state width="1492" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1676206634414" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1676040657524">
+    <state width="1493" height="197" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1677424439340" />
+    <state width="1493" height="355" key="GridCell.Tab.1.bottom" timestamp="1677423091358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1676040657524" />
+    <state width="1493" height="355" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1677423091358" />
+    <state width="1493" height="355" key="GridCell.Tab.1.center" timestamp="1677423091358">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="355" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1677423091358" />
+    <state width="1493" height="355" key="GridCell.Tab.1.left" timestamp="1677423091358">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="355" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1677423091358" />
+    <state width="1493" height="355" key="GridCell.Tab.1.right" timestamp="1677423091358">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="355" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1677423091358" />
+    <state x="439" y="111" key="NewModule_or_Project.wizard" timestamp="1677217341801">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="439" y="111" key="NewModule_or_Project.wizard/0.0.1536.824@0.0.1536.824" timestamp="1677217341801" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1677216935091">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1677216935091" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1677216880222">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1677216880222" />
+    <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1677324319277">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1677324319277" />
     <state x="410" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1672652414698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="410" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1672652414698" />
-    <state x="209" y="33" key="new project wizard" timestamp="1675963810038">
+    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1677324327011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1675963810038" />
+    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1677324327011" />
+    <state x="209" y="33" key="new project wizard" timestamp="1677217091713">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1677217091713" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/kanban/service/InMemoryManager.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/kanban/service/InMemoryHistoryManager.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
