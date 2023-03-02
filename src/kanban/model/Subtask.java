@@ -26,11 +26,14 @@ public class Subtask extends Task {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", duration='" + duration + '\'' +
                 '}';
     }
 
     @Override
     public String toSave() { //для сохранения вводим отдельный метод, чтобы проверять по удобному toString
-        return (uid + "," + TaskType.SUBTASK + "," + name + "," + status + "," + description + "," + epicID + ",");
+        return (uid + "," + TaskType.SUBTASK + "," + name + "," + status + "," + description + "," + epicID
+                + "," + startTime + "," + duration + ",");
     }
 }

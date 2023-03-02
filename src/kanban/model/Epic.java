@@ -2,6 +2,7 @@ package kanban.model;
 
 import kanban.service.TaskType;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Epic extends Task {
@@ -28,7 +29,9 @@ public class Epic extends Task {
         String result = "Epic{uid=" + uid +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", status='" + status + '\'';
+                ", status='" + status + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", duration='" + duration + '\'';
 
         if (subtasksIds.isEmpty()) {
             result += ", subtasksIds=[null]";
@@ -40,6 +43,8 @@ public class Epic extends Task {
 
     @Override
     public String toSave() { //для сохранения вводим отдельный метод, чтобы проверять по удобному toString
-        return (uid + "," + TaskType.EPIC + "," + name + "," + status + "," + description + ",");
+        return (uid + "," + TaskType.EPIC + "," + name + "," + status + "," + description + ","
+                + startTime + "," + duration + ",");
     }
 }
+

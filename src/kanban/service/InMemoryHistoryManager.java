@@ -41,6 +41,8 @@ public class InMemoryHistoryManager implements HistoryManager {
         //создаем лист с капасити равной размеру истории
         ArrayList<Task> history = new ArrayList<>(customLinkedList.size());
 
+        if (customLinkedList.isEmpty()) return history;
+
         Integer index = head.getUid(); //индекс = ID таски из истории (ключу мапы) начинаем с головы
         for (int i = 0; i < customLinkedList.size(); i++) {
             history.add(customLinkedList.get(index).getTask()); //по индексу достаем из мапы ноду и из ноды берем таску
@@ -92,4 +94,5 @@ public class InMemoryHistoryManager implements HistoryManager {
     public void clearAllHistory() {
         customLinkedList.clear();
     }
+
 }

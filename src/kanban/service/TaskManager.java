@@ -1,6 +1,8 @@
 package kanban.service;
 
 import java.util.HashMap;
+import java.util.TreeSet;
+
 import kanban.model.*;
 
 public interface TaskManager {
@@ -42,4 +44,6 @@ public interface TaskManager {
     public Boolean updateEpic(Epic epic);
 
     public Boolean updateSubtask(Subtask sub);
+
+    public TreeSet<Task> getPrioritizedSet();
 }

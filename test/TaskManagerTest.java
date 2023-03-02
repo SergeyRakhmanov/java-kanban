@@ -1,9 +1,9 @@
 import kanban.model.*;
 import static org.junit.jupiter.api.Assertions.*;
-
 import kanban.service.InMemoryHistoryManager;
 import kanban.service.TaskManager;
 import org.junit.jupiter.api.Test;
+import java.time.LocalDateTime;
 
 public abstract class TaskManagerTest <T extends TaskManager> {
 
@@ -211,7 +211,7 @@ public abstract class TaskManagerTest <T extends TaskManager> {
         assertEquals(null,manager.getEpicById(epic.getUid() + 1));
     }
 
-    @Test  //ВЫЗЫВАЕТ ОШИБКУ в тесте с файлом
+    @Test
     public void shouldGetNameOfSubtaskBySubtaskId() {
         Epic epic = createTestEpic(1);
         Subtask subtask = createTestSubtask(1,epic);
@@ -242,12 +242,100 @@ public abstract class TaskManagerTest <T extends TaskManager> {
         assertEquals("NewName",manager.getEpicById(epic.getUid()).getName());
     }
 
-/*    @Test
+    @Test
     public void shouldGetNewNameAfterSubtaskUpdate() {
         Epic epic = createTestEpic(1);
-        Subtask subtask = createTestSubtask(1,epic);
+        Subtask subtask = createTestSubtask(2,epic);
         subtask.setName("NewName");
         manager.updateSubtask(subtask);
         assertEquals("NewName",manager.getSubtaskById(subtask.getUid()).getName());
-    }*/
+    }
+
+    @Test
+    public void shouldFalseWhenTasksWorkPeriodCrossed() {
+        Task task1 = createTestTask(1);
+        Task task2 = createTestTask(2);
+
+        manager.updateTask(new Task(task1.getName(),
+                task1.getDescription(),
+                task1.getUid(),
+                30,
+                LocalDateTime.of(2023,2,3,17,0)));
+
+        assertFalse(manager.updateTask(new Task(task2.getName(),
+                task2.getDescription(),
+                task2.getUid(),
+                80,
+                LocalDateTime.of(2023,2,3,16,0)))
+        );
+    }
+
+    @Test
+    public void shouldTrueWhenTasksWorkPeriodNotCrossed() {
+        Task task1 = createTestTask(1);
+        Task task2 = createTestTask(2);
+
+        manager.updateTask(new Task(task1.getName(),
+                task1.getDescription(),
+                task1.getUid(),
+                30,
+                LocalDateTime.of(2023,2,3,17,0)));
+
+        assertFalse(manager.updateTask(new Task(task2.getName(),
+                task2.getDescription(),
+                task2.getUid(),
+                40,
+                LocalDateTime.of(2023,2,3,16,20)))
+        );
+    }
+
+    @Test
+    public void shouldGetSubtask2FromPrioritizedList() {
+        Epic epic = createTestEpic(1);
+        Subtask subtask1 = createTestSubtask(2,epic);
+        Task task = createTestTask(3);
+        Subtask subtask2 = createTestSubtask(4,epic);
+
+        task.setStartTime(LocalDateTime.of(2023,2,3,17,0));
+        task.setDuration(30);
+        manager.updateTask(task);
+
+        subtask1.setStartTime(LocalDateTime.of(2023,1,3,10,0));
+        subtask1.setDuration(80);
+        manager.updateSubtask(subtask1);
+
+        subtask2.setStartTime(LocalDateTime.of(2023,2,3,10,0));
+        subtask2.setDuration(80);
+        manager.updateSubtask(subtask2);
+
+        assertEquals("Сабтаск2",manager.getPrioritizedSet().first().getName());
+    }
+
+    @Test
+    public void shouldGet100MinutesOfEpicDuration() {
+        Epic epic = createTestEpic(1);
+        Subtask subtask1 = createTestSubtask(2,epic);
+        Subtask subtask2 = createTestSubtask(3,epic);
+
+        subtask1.setDuration(50);
+        manager.updateSubtask(subtask1);
+        subtask2.setDuration(50);
+        manager.updateSubtask(subtask2);
+
+        assertEquals(100,manager.getEpicById(epic.getUid()).getDuration());
+    }
+
+    @Test
+    public void shouldGet20230101T1000OfEpicStartDate() {
+        Epic epic = createTestEpic(1);
+        Subtask subtask1 = createTestSubtask(2,epic);
+        Subtask subtask2 = createTestSubtask(3,epic);
+
+        subtask1.setStartTime(LocalDateTime.of(2023,02,02,10,0));
+        manager.updateSubtask(subtask1);
+        subtask2.setStartTime(LocalDateTime.of(2023,01,01,10,0));
+        manager.updateSubtask(subtask2);
+
+        assertEquals("2023-01-01T10:00",manager.getEpicById(epic.getUid()).getStartTime().toString());
+    }
 }

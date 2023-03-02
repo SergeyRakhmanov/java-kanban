@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39918e99-87b8-43d3-93a9-1cfc5ffbbc13" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/HistoryManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanban/kanban/service/InMemoryHistoryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-kanban/kanban/service/InMemoryHistoryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanban/kanban/service/InMemoryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-kanban/kanban/service/InMemoryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/java-kanban/EpicTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/java-kanban/EpicTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/java-kanban/FileBackendTasksManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/java-kanban/FileBackendTasksManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/java-kanban/TaskManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/java-kanban/TaskManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kanban/model/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/model/Epic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kanban/model/Subtask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/model/Subtask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kanban/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/model/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kanban/service/InMemoryHistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/service/InMemoryHistoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kanban/service/InMemoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/service/InMemoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kanban/service/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kanban/service/TaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EpicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/EpicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/FileBackendTasksManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FileBackendTasksManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TaskManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TaskManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,62 +73,64 @@
       <recent name="C:\Users\Анна\dev\java-kanban\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FileBackendTasksManagerTest.shouldGetNameOfSubtaskBySubtaskId">
-    <configuration name="FileBackendTasksManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.InMemoryManagerTest.shouldTrueWhenTasksWorkPeriodNotCrossed">
+    <configuration name="FileBackendTasksManagerTest.shouldFalseWhenTasksWorkPeriodCrossed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FileBackendTasksManagerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileBackendTasksManagerTest.shouldGetNameOfEpicByEpicId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-kanban" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FileBackendTasksManagerTest" />
-      <option name="METHOD_NAME" value="shouldGetNameOfEpicByEpicId" />
+      <option name="METHOD_NAME" value="shouldFalseWhenTasksWorkPeriodCrossed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileBackendTasksManagerTest.shouldGetNameOfSubtaskBySubtaskId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-kanban" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FileBackendTasksManagerTest" />
-      <option name="METHOD_NAME" value="shouldGetNameOfSubtaskBySubtaskId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileBackendTasksManagerTest.shouldGetNullWithWrongEpicId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-kanban" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FileBackendTasksManagerTest" />
-      <option name="METHOD_NAME" value="shouldGetNullWithWrongEpicId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InMemoryManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InMemoryManagerTest.shouldGet20230101T1000OfEpicStartDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="InMemoryManagerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="shouldGet20230101T1000OfEpicStartDate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InMemoryManagerTest.shouldThrowExceptionWhenTasksWorkPeriodCrossed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InMemoryManagerTest" />
+      <option name="METHOD_NAME" value="shouldThrowExceptionWhenTasksWorkPeriodCrossed" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InMemoryManagerTest.shouldTrhowExceptionWhenTasksWorkPeriodCrossed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InMemoryManagerTest" />
+      <option name="METHOD_NAME" value="shouldTrhowExceptionWhenTasksWorkPeriodCrossed" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InMemoryManagerTest.shouldTrueWhenTasksWorkPeriodNotCrossed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InMemoryManagerTest" />
+      <option name="METHOD_NAME" value="shouldTrueWhenTasksWorkPeriodNotCrossed" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileBackendTasksManagerTest.shouldGetNameOfSubtaskBySubtaskId" />
-        <item itemvalue="JUnit.FileBackendTasksManagerTest.shouldGetNameOfEpicByEpicId" />
-        <item itemvalue="JUnit.FileBackendTasksManagerTest.shouldGetNameOfSubtaskBySubtaskId" />
-        <item itemvalue="JUnit.FileBackendTasksManagerTest.shouldGetNullWithWrongEpicId" />
-        <item itemvalue="JUnit.FileBackendTasksManagerTest" />
+        <item itemvalue="JUnit.InMemoryManagerTest.shouldTrueWhenTasksWorkPeriodNotCrossed" />
+        <item itemvalue="JUnit.FileBackendTasksManagerTest.shouldFalseWhenTasksWorkPeriodCrossed" />
+        <item itemvalue="JUnit.InMemoryManagerTest.shouldThrowExceptionWhenTasksWorkPeriodCrossed" />
+        <item itemvalue="JUnit.InMemoryManagerTest.shouldThrowExceptionWhenTasksWorkPeriodCrossed" />
+        <item itemvalue="JUnit.InMemoryManagerTest.shouldThrowExceptionWhenTasksWorkPeriodCrossed" />
       </list>
     </recent_temporary>
   </component>
@@ -135,15 +153,15 @@
     </state>
     <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671559298687" />
     <state x="331" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1677324040482" />
-    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1677355343358">
+    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1677757086511">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1677355343358" />
-    <state x="612" y="175" key="#com.intellij.ide.util.MemberChooser" timestamp="1677392769222">
+    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1677757086511" />
+    <state x="612" y="175" key="#com.intellij.ide.util.MemberChooser" timestamp="1677759123746">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="2685" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671564585886" />
-    <state x="612" y="175" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1677392769222" />
+    <state x="612" y="175" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1677759123746" />
     <state x="618" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1677324046936">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -164,42 +182,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1677271855527" />
-    <state width="1493" height="197" key="GridCell.Tab.0.bottom" timestamp="1677424439340">
+    <state width="1493" height="355" key="GridCell.Tab.0.bottom" timestamp="1677778815944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671565904849" />
-    <state width="1493" height="197" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1677424439340" />
-    <state width="1493" height="197" key="GridCell.Tab.0.center" timestamp="1677424439340">
+    <state width="1493" height="355" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1677778815944" />
+    <state width="1493" height="355" key="GridCell.Tab.0.center" timestamp="1677778815944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671565904849" />
-    <state width="1493" height="197" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1677424439340" />
-    <state width="1493" height="197" key="GridCell.Tab.0.left" timestamp="1677424439340">
+    <state width="1493" height="355" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1677778815944" />
+    <state width="1493" height="355" key="GridCell.Tab.0.left" timestamp="1677778815944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671565904849" />
-    <state width="1493" height="197" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1677424439340" />
-    <state width="1493" height="197" key="GridCell.Tab.0.right" timestamp="1677424439340">
+    <state width="1493" height="355" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1677778815944" />
+    <state width="1493" height="355" key="GridCell.Tab.0.right" timestamp="1677778815944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1671565904849" />
-    <state width="1493" height="197" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1677424439340" />
-    <state width="1493" height="355" key="GridCell.Tab.1.bottom" timestamp="1677423091358">
+    <state width="1493" height="355" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1677778815944" />
+    <state width="1493" height="355" key="GridCell.Tab.1.bottom" timestamp="1677778815944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="355" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1677423091358" />
-    <state width="1493" height="355" key="GridCell.Tab.1.center" timestamp="1677423091358">
+    <state width="1493" height="355" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1677778815944" />
+    <state width="1493" height="355" key="GridCell.Tab.1.center" timestamp="1677778815944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="355" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1677423091358" />
-    <state width="1493" height="355" key="GridCell.Tab.1.left" timestamp="1677423091358">
+    <state width="1493" height="355" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1677778815944" />
+    <state width="1493" height="355" key="GridCell.Tab.1.left" timestamp="1677778815944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="355" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1677423091358" />
-    <state width="1493" height="355" key="GridCell.Tab.1.right" timestamp="1677423091358">
+    <state width="1493" height="355" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1677778815944" />
+    <state width="1493" height="355" key="GridCell.Tab.1.right" timestamp="1677778815944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="355" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1677423091358" />
+    <state width="1493" height="355" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1677778815944" />
     <state x="439" y="111" key="NewModule_or_Project.wizard" timestamp="1677217341801">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -224,25 +242,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1677324327011" />
-    <state x="209" y="33" key="new project wizard" timestamp="1677217091713">
+    <state x="209" y="33" key="new project wizard" timestamp="1677575657338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1677217091713" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kanban/service/InMemoryManager.java</url>
-          <line>143</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kanban/service/InMemoryHistoryManager.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1677575657338" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1677769331687">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1677769331687" />
   </component>
 </project>

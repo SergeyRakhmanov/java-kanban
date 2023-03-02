@@ -1,5 +1,4 @@
 id,type,name,status,description,epic
-1,EPIC,Эпик1,NEW,Описание эпика1,
-2,SUBTASK,Сабтаск1,NEW,Описание сабтаска1,1,
+1,TASK,Таск1,NEW,Описание таска1,2023-02-03T17:00,30
+2,TASK,Таск2,NEW,Описание таска2,null,0
 
-2,

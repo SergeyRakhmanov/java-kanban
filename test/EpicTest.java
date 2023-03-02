@@ -7,6 +7,10 @@ import kanban.service.TaskManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EpicTest {
@@ -97,7 +101,18 @@ class EpicTest {
         manager.updateSubtask(subtask2);
 
         //и проверяем статус эпика
-        //кстати тут была ошибка, в реализации не учитывался такой случай и статус эпика оставался NEW...
         assertEquals(TaskStatus.IN_PROGRESS,epic.getStatus());
+    }
+
+    @Test
+    public void shouldGet20230203T0000AfterUpdateSubtask() {
+        Subtask subtask = new Subtask("Сабтаск","Описание сабтаска", epic.getUid());
+        manager.createSubtask(subtask);
+
+        LocalDateTime startSubTime = LocalDateTime.of(2023,02,3,0,0);
+        subtask.setStartTime(startSubTime);
+        manager.updateSubtask(subtask);
+
+        assertEquals("2023-02-03T00:00",epic.getStartTime().toString());
     }
 }
