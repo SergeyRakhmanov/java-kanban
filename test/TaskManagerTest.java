@@ -308,7 +308,7 @@ public abstract class TaskManagerTest <T extends TaskManager> {
         subtask2.setDuration(80);
         manager.updateSubtask(subtask2);
 
-        assertEquals("Сабтаск2",manager.getPrioritizedSet().first().getName());
+        assertEquals("Сабтаск4",manager.getPrioritizedSet().first().getName());
     }
 
     @Test

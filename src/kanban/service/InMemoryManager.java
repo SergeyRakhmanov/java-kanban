@@ -34,7 +34,7 @@ public class InMemoryManager implements TaskManager {
     public int createTask(Task task) { //создание таски
         //проверяем возможность сохранения (пересечение времени задач)
         if (!validate(task)) {
-            return false;
+            return 0;
         }
         task.setUid(guid);
         listOfTask.put(task.getUid(),task);
@@ -55,7 +55,7 @@ public class InMemoryManager implements TaskManager {
     public int createSubtask(Subtask subtask) { //создание сабтаски
         //проверяем возможность сохранения (пересечение времени задач)
         if (!validate(subtask)) {
-            return false;
+            return 0;
         }
 
         subtask.setUid(guid);
@@ -65,8 +65,8 @@ public class InMemoryManager implements TaskManager {
         //добавляю в эпик информацию по новому сабтаску
         listOfEpic.get(subtask.getEpicID()).addSubtask(subtask.getUid());
 
-        //обновляем статус эпика, т.к. добавили новый сабтаск, то статус ставим NEW
-        listOfEpic.get(subtask.getEpicID()).setStatus(TaskStatus.NEW);
+        //обновляем эпик после изменений
+        updateEpicAfterChange(listOfEpic.get(subtask.getEpicID()));
 
         //добавляем в приоретизированный список
         listOfPrioritizeTasks.add(subtask);
